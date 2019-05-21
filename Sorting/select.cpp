@@ -4,7 +4,8 @@
 using namespace std;
 
 void Insertion_sort(int *A,int s,int n){
-  for (int i =1+ s; i < n; i++)
+ int i=1+s;
+  while(i < n)
         {
             int x = A[i];
             int j = i - 1;
@@ -16,6 +17,7 @@ void Insertion_sort(int *A,int s,int n){
 		}
             }
             A[j + 1] = x;
+	    i++;
         }
 };
 

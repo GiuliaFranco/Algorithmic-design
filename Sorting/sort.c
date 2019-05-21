@@ -18,7 +18,8 @@ void printArray(int *A,int n){
 };
 
 void Insertion_sort(int *A,int n){
-  for (int i = 1; i < n; i++)
+  int i=1;
+  while(i < n)
         {
             int x = A[i];
             int j = i - 1;
@@ -30,6 +31,7 @@ void Insertion_sort(int *A,int n){
 		}
             }
             A[j + 1] = x;
+	    i++;
         }
 };
 void swap(int *a, int *b)
