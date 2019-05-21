@@ -1,0 +1,41 @@
+Vertex   Distance from Source
+0 		 0
+1 		 4
+2 		 12
+3 		 8
+4 		 14
+Execution time for the small graph:
+5	0.000050
+Vertex   Distance from Source
+0 		 0
+1 		 4
+2 		 12
+3 		 19
+4 		 21
+5 		 11
+6 		 9
+7 		 8
+8 		 14
+9 		 21
+10 		 25
+11 		 17
+12 		 25
+13 		 29
+14 		 22
+15 		 28
+16 		 29
+17 		 37
+18 		 72
+19 		 39
+20 		 53
+21 		 67
+22 		 46
+23 		 63
+24 		 66
+25 		 54
+26 		 52
+27 		 58
+28 		 59
+29 		 67
+Execution time for the big graph:
+30	0.000036
