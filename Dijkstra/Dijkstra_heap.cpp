@@ -30,18 +30,18 @@ public:
         int Left(int idx){return 2 * idx + 1;}
 	int Right(int idx){return 2 * idx + 2;}
 	void minHeapify(int idx){
-		int smallest, left, right;
-           	smallest = idx;
+		int m, left, right;
+           	m = idx;
            	left = Left(idx);
     		right = Right(idx);
-    		if (left < size && this->Node_arr[left].second < this->Node_arr[smallest].second )
-      			smallest = left;
-    		if (right < size &&this-> Node_arr[right].second < this->Node_arr[smallest].second )
-      			smallest = right;
-    		if (smallest != idx){
-			swap(this->pos[Node_arr[smallest].first],this->pos[Node_arr[idx].first]);
-        		swap(this->Node_arr[smallest],this->Node_arr[idx]);
-			this->minHeapify(smallest);
+    		if (left < size && this->Node_arr[left].second < this->Node_arr[m].second )
+      			m = left;
+    		if (right < size &&this-> Node_arr[right].second < this->Node_arr[m].second )
+      			m = right;
+    		if (m != idx){
+			swap(this->pos[Node_arr[m].first],this->pos[Node_arr[idx].first]);
+        		swap(this->Node_arr[m],this->Node_arr[idx]);
+			this->minHeapify(m);
 		}
 	}
 	bool isEmpty(){  
