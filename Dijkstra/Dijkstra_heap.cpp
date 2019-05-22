@@ -48,6 +48,21 @@ public:
 		if(size==0) return true;
 		else return false;
 	}
+	void decrease(int v, int d){
+                int i = pos[v];
+                Node_arr[i].second= d;
+                while (i && Node_arr[i].second < Node_arr[(i-1)/2].second){
+                swap(pos[Node_arr[i].first],pos[Node_arr[(i-1)/2].first]);
+                swap(Node_arr[i],Node_arr[(i - 1) / 2]);
+                i = (i - 1) / 2;
+                }
+        };
+
+        bool isInMinHeap(int v){
+                if (pos[v] < size) return true;
+                else return false;
+        }
+
 	int* extractMin(){
 		if (!isEmpty()){
 		pair<int,int> r=Node_arr[0];
@@ -61,20 +76,6 @@ public:
 		}
 		return NULL;
 	}
-	void decreaseKey(int v, int d){
-    		int i = pos[v];
-    		Node_arr[i].second= d;
-    		while (i && Node_arr[i].second < Node_arr[(i-1)/2].second){
-		swap(pos[Node_arr[i].first],pos[Node_arr[(i-1)/2].first]);
-	     	swap(Node_arr[i],Node_arr[(i - 1) / 2]);
-        	i = (i - 1) / 2;
-    		}
-	};
-	bool isInMinHeap(int v){
-   		if (pos[v] < size) return true;
-   		else return false;
-	}
-
 
 };
 
@@ -95,7 +96,7 @@ void Init(int src,int *dist,MinHeap* minHeap,int V){
    dist[src] = 0;
     minHeap->Node_arr[src]= make_pair(src, dist[src]);
     minHeap->pos[src]=src;
-    minHeap->decreaseKey(0,0);
+    minHeap->decrease(0,0);
     minHeap->size = V;
 
 }
@@ -105,7 +106,7 @@ void relax(MinHeap* minHeap,int u,int *dist,list< pair<int, int> >::iterator p){
              if (minHeap->isInMinHeap(v) && dist[u] != INT_MAX &&  p->second + dist[u] < dist[v])
             {
                 dist[v] = dist[u] +  p->second;
-                minHeap->decreaseKey(v, dist[v]);
+                minHeap->decrease(v, dist[v]);
             }
 }
 
