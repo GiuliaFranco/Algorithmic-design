@@ -78,7 +78,7 @@ public:
 
 };
 
-void printArr(int* dist, int n)
+void print(int* dist, int n)
 {
     cout<<"Vertex   Distance "<<endl;
     for (int i = 0; i < n; ++i)
@@ -123,7 +123,7 @@ void dijkstra(Graph* graph, int src){
 	    p++;
         }
     }
-    printArr(dist, V);
+    print(dist, V);
 }
 
 int main(){
