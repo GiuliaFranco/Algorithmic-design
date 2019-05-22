@@ -60,7 +60,7 @@ void fill_array(int arrat[],int s){
                 arrat[i]=rand() % (20-1);
         }
 };
-//find max element of A and move it to the end, then repeat the procedure on the subarray.
+
 void HeapSort(int* a,int n){
 	Build_Heap(a,n);
 	for (int i=n-1; i>=1; i--) 
