@@ -44,10 +44,11 @@ void swap(int *a, int *b)
 int Partition(int *a, int l, int r, int x)
 {
     int search=0;
-    for (int i=l; i<r; i++)
+    int i = 0;
+    for (i=l; i<r; i++)
         if (a[i] == x) search=i;
     swap(&a[search], &a[r]);
-    int i = l;
+    i = l;
     int j=l;
     while(j <= r - 1)
     {
