@@ -29,14 +29,21 @@ public:
 	}
         int Left(int idx){return 2 * idx + 1;}
 	int Right(int idx){return 2 * idx + 2;}
+	int Parent(int idx){return (idx-1)/2;}
+	bool IsValidNode(int n,int i){
+	bool ans;
+	if(i>n) ans=false;
+        if(i<n) ans=true;
+	return ans;
+        };
 	void minHeapify(int idx){
 		int m, left, right;
            	m = idx;
            	left = Left(idx);
     		right = Right(idx);
-    		if (left < size && this->Node_arr[left].second < this->Node_arr[m].second )
+    		if (IsValidNode(size,left) && this->Node_arr[left].second < this->Node_arr[m].second )
       			m = left;
-    		if (right < size &&this-> Node_arr[right].second < this->Node_arr[m].second )
+    		if (IsValidNode(size,right) &&this-> Node_arr[right].second < this->Node_arr[m].second )
       			m = right;
     		if (m != idx){
 			swap(this->pos[Node_arr[m].first],this->pos[Node_arr[idx].first]);
@@ -51,10 +58,10 @@ public:
 	void decrease(int v, int d){
                 int i = pos[v];
                 Node_arr[i].second= d;
-                while (i && Node_arr[i].second < Node_arr[(i-1)/2].second){
-                swap(pos[Node_arr[i].first],pos[Node_arr[(i-1)/2].first]);
-                swap(Node_arr[i],Node_arr[(i - 1) / 2]);
-                i = (i - 1) / 2;
+                while (i && Node_arr[i].second < Node_arr[Parent(i)].second){
+                swap(pos[Node_arr[i].first],pos[Node_arr[Parent(i)].first]);
+                swap(Node_arr[i],Node_arr[Parent(i)]);
+                i = Parent(i);
                 }
         };
 
