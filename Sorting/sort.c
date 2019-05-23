@@ -29,6 +29,7 @@ void Insertion_sort(int *A,int n){
                 A[j + 1] = A[j];
                 j--;
 		}
+		else continue;
             }
             A[j + 1] = x;
 	    i++;
