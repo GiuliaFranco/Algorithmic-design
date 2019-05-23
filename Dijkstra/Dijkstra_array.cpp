@@ -5,14 +5,14 @@
 using namespace std;
 
 int min(int ** a,int vertex){
-	int def_min=INT_MAX, index;
+	int def_min=INT_MAX, search;
 	for(int i=0;i<vertex;i++){
 		if(a[1][i]==0){
 			def_min=min(a[0][i],def_min);
-			index=i;
+			search=i;
 		}
 	}
-	return index;
+	return search;
 };
 
 void init(int vertex,int **mat,int S){
