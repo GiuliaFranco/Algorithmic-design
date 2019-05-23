@@ -47,7 +47,7 @@ int Partition(int *a, int l, int r, int x)
     for (int i=l; i<r; i++)
         if (a[i] == x) search=i;
     swap(&a[search], &a[r]);
-    i = l;
+    int i = l;
     int j=l;
     while(j <= r - 1)
     {
