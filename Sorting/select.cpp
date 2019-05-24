@@ -8,14 +8,13 @@ void Insertion_sort(int *a,int s,int n){
   while(i < n)
         {
             int x = a[i];
-            int j = i - 1;
-            while (j >= 0 && a[j]>x)
+            while (i >= 1 && a[i-1]>x)
             {
-                a[j + 1] = a[j];
-                j--;
+                a[i] = a[i-1];
+                i--;
 		
             }
-            a[j + 1] = x;
+            a[i] = x;
 	    i++;
         }
 };
