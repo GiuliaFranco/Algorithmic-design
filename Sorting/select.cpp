@@ -3,19 +3,19 @@
 #include <iostream>
 using namespace std;
 
-void Insertion_sort(int *A,int s,int n){
+void Insertion_sort(int *a,int s,int n){
  int i=1+s;
   while(i < n)
         {
-            int x = A[i];
+            int x = a[i];
             int j = i - 1;
-            while (j >= 0 && A[j]>x)
+            while (j >= 0 && a[j]>x)
             {
-                A[j + 1] = A[j];
+                a[j + 1] = a[j];
                 j--;
 		
             }
-            A[j + 1] = x;
+            a[j + 1] = x;
 	    i++;
         }
 };
