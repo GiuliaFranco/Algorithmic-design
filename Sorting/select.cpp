@@ -9,12 +9,11 @@ void Insertion_sort(int *A,int s,int n){
         {
             int x = A[i];
             int j = i - 1;
-            while (j >= 0)
+            while (j >= 0 && A[j]>x)
             {
-		if(A[j]>x){
                 A[j + 1] = A[j];
                 j--;
-		}
+		
             }
             A[j + 1] = x;
 	    i++;
@@ -77,9 +76,10 @@ int Median_Five(int* a, int start, int end)
   int j=start+delta;
   int i=start;
   while(i<chunks){
+	 if(j+delta<end){
 	swap(&a[i],&a[(j + i * 5) / 2]);
-	if(j+delta>=end) break;
-	else j+=delta;
+	j+=delta;
+	 }
 	i++;
    }
   int range=start + chunks;
