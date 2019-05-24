@@ -17,21 +17,19 @@ void printArray(int *A,int n){
   printf("\n");
 };
 
-void Insertion_sort(int *A,int n){
+void Insertion_sort(int *a,int n){
   int i=1;
   while(i < n)
         {
-            int x = A[i];
+            int x = a[i];
             int j = i - 1;
-            while (j >= 0)
+            while (j >= 0 && A[j]>x)
             {
-		if(A[j]>x){
-                A[j + 1] = A[j];
+                a[j + 1] = a[j];
                 j--;
-		}
-		else continue;
+
             }
-            A[j + 1] = x;
+            a[j + 1] = x;
 	    i++;
         }
 };
