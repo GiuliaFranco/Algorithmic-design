@@ -69,7 +69,7 @@ void QuickSort(int *a, int start, int end,int Bool)
     int i;
     int j=0;
     if(Bool==0){
-	j=a[end];	
+	j=a[end-1];	
     }
     if(Bool==1){j=a[(start+end)/2];}
     if (start < end)
