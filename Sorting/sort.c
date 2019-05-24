@@ -23,7 +23,7 @@ void Insertion_sort(int *a,int n){
         {
             int x = a[i];
             int j = i - 1;
-            while (j >= 0 && A[j]>x)
+            while (j >= 0 && a[j]>x)
             {
                 a[j + 1] = a[j];
                 j--;
