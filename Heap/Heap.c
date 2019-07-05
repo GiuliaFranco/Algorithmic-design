@@ -3,6 +3,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <limits.h>
 
 void swap(int *a, int *b)
 {
@@ -58,6 +59,37 @@ void fill_array(int arrat[],int s){
                 arrat[i]=rand() % (20-1);
         }
 };
+
+void Remove_min(int a[],int n){
+    a[0]=a[n-1];
+    Heapify(a,0,n-1);
+};
+
+
+void Decrease(int a[],int i, int v){
+    if(a[i]>=v) printf ("error!");
+    a[i]=v;
+    while( !(  IsRoot(a,i) || a[Parent(a,i)]>=a[i] )){
+        swap(&a[i],&a[Parent(a,i)]);
+        i=Parent(a,i);
+    }
+
+};
+
+
+int* Insert(int a[], int v,int n){
+    int newsize=n+1;
+    int* newHeap=(int*)malloc(sizeof(int)*newsize);
+    for(size_t i = 0; i < newsize-1; i++)
+    {
+        newHeap[i]=a[i];
+    }
+    newHeap[newsize]=-INT_MAX;
+    Decrease(newHeap,newsize,v);
+    free(a);
+    return newHeap;
+};
+
 
 void HeapSort(int* a,int n){
 	Build_Heap(a,n);
