@@ -66,7 +66,8 @@ void HeapSort(int* a,int n){
 	for (int i=n-1; i>=1; i--) 
         { 
 	    swap(&a[0], &a[i]);
-            Heapify(a, i, 0); 
+	    n=n-1;
+            Heapify(a, n, 0); 
         }
 
 };
