@@ -21,10 +21,8 @@ bool IsRoot(int* m,int i){
 };
 
 bool IsValidNode(int n,int i){
-	bool ans;
-	if(i>n) ans=false;
-        if(i<n) ans=true;
-	return ans;
+	if(i>=n) false;
+        if(i<n) true;
 };
 
 void Heapify(int* a,int n,int i){
@@ -33,7 +31,7 @@ void Heapify(int* a,int n,int i){
     int right=Right(a,i);   
     if(IsValidNode(n,left) && a[left]>a[m]){m=left;}
     if(IsValidNode(n,right) && a[right]>a[m]){m=right;}
-    if(i!=m){
+    if(m!=i){
 	swap(&a[i],&a[m]);
 	Heapify(a,n,m);
     } 
@@ -63,11 +61,10 @@ void fill_array(int arrat[],int s){
 
 void HeapSort(int* a,int n){
 	Build_Heap(a,n);
-	for (int i=n-1; i>=1; i--) 
+	for (int i=n-1; i>=0; i--) 
         { 
 	    swap(&a[0], &a[i]);
-	    n=n-1;
-            Heapify(a, n, 0); 
+            Heapify(a, i, 0); 
         }
 
 };
