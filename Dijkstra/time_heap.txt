@@ -5,7 +5,7 @@ Vertex   Distance from Source
 3 		 8
 4 		 14
 Execution time for the small graph:
-5	0.000050
+5	0.000153
 Vertex   Distance from Source
 0 		 0
 1 		 4
@@ -38,4 +38,4 @@ Vertex   Distance from Source
 28 		 59
 29 		 67
 Execution time for the big graph:
-30	0.000036
+30	0.000296
